@@ -132,7 +132,11 @@ body {
 .cabecalho-sub-titulo {
     font-size: 1.5rem;
     color: var(--claro);
+}
 
+.cabecalho-sub-titulo-estoque {
+    font-size: 2.2rem;
+    color: var(--claro);
 }
 
 .sobre {
