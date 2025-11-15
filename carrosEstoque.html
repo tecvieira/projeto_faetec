@@ -4,42 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_estoque.css">
+    <link rel="stylesheet" href="style_digital.css">
     <title>Motor Digital Estoque</title>
 </head>
-
 <body>
+    <div class="particulas"></div>
+    
+    
     <nav class="navegacao">
         <ul class="menu">
-            <li><a href="/home/robsonvander/Documentos/GitHub/projeto_faetec/index.html" class="menu-link">Voltar</a>
-            </li>
-            <li><a href="#proximo" class="menu-link">Próxima</a></li>
+            <li><a href="index.html" class="menu-link">Voltar</a></li>
             <li><a href="https://www.google.com/?hl=pt_BR" class="menu-link">Sair</a></li>
             <li><a href="#contatos" class="menu-link">Contatos</a></li>
         </ul>
     </nav>
-    <header class="header">
-        <img src="image/masserati/masserati_estoque_header.jpg" alt="logo da masserati" class="masseratiLogo">
-        <h1>Motor Digital Veículos</h1>
-    </header>
-    <main>
-        <div class="mostraCarros">
-            <img class="fotoCarro" src="image/masserati/masserati_branca_1.png" alt="masserati-branca">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore et maxime tempora laborum magnam illum hic, nam fuga adipisci deserunt quibusdam veritatis atque, veniam laboriosam aut. Impedit praesentium doloremque quod?</p>
-        </div>
-        <div class="mostraCarros">
-            <img class="fotoCarro" src="image/masserati/masserati_blue/masserati-azul.jpg" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat, quibusdam omnis et delectus esse voluptas? Fugiat voluptate totam deserunt hic dolorum, nostrum saepe eum enim repudiandae omnis. Dolorem, voluptate.</p>
-        </div>
-        <div class="mostraCarros">
-            <img class="fotoCarro" src="image/masserati/masserati_red/masserati-vermelha.jpg" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime numquam ea veritatis cumque illo esse eaque, ipsam sunt natus ut excepturi et accusamus deserunt similique perferendis, hic nulla facilis perspiciatis.</p>
-        </div>
-        
+    <main id="inicio" class="cabecalho">
+    
+        <img src="image/masserati/masserati_estoque_header.jpg" alt="foto roda masserati" class="foto-perfil-estoque">
+        <h1>Motor Digital.</h1>
+        <p class="cabecalho-sub-titulo">Masserati </p>
+    
     </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Nossos Modelos</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Veículos usados e semi novos, revisados e com garantia.</p>
+        </div>
+    </section>
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulos">Selecione o Modelo</h2>
+        <div class="projetos-caixa">
+    
+            <div class="projetos-card">
+                <a href="image/masserati/masserati_branca_1.png"><img src="image/masserati/masserati_branca_1.png" alt="Masserati branca"
+                        class="projetos-imagem"></a>
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">
+                        Masserati
+                    </h3>
+                    <p class="paragrafo-projetos">
+                        Especificação:<br>
+                        Ano:<br>
+                        Ar condicionado digital, direção, vidros elétricos
+                    </p>
+                </div>
+            </div>
+    
+            <div class="projetos-card">
+                <img src="image/masserati/masserati_blue/masserati-azul.jpg" alt="novo aquario" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">
+                        Masserati
+                    </h3>
+                    <p class="paragrafo-projetos">
+                        Especificação:<br>
+                        Ano:<br>
+                        Ar condicionado digital, direção, vidros elétricos
+                    </p>
+                </div>
+            </div>
+    
+            <div class="projetos-card">
+                <img src="image/masserati/masserati_red/masserati-vermelha.jpg" alt="aquario marinho" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">
+                        Masserati
+                    </h3>
+                    <p class="paragrafo-projetos">
+                        Especificação:<br>
+                        Ano:<br>
+                        Ar condicionado digital, direção, vidros elétricos
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Vendedores de Plantão.</h2>
+        <p>Deixe seu contato, tire suas dúvidas via wat zap.</p>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input type="text" placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatZap</button>
+        </form>
+        <!--<p class="topoMenu"><a href="#inicio">TOPO</a></p>-->
+        <button class="topoMenu"><a href="#inicio">TOPO</a></button>
+    
+    </section>
     <footer>
         <p>Curso Prog. WEB - FAETEC Prof. André Coutinho - Aluno: Robson Vieira</p>
+        <p></p>
     </footer>
+    <script>
+        function enviarWhats(event) {
+            // evita que a tela recarregue por padrão
+            event.preventDefault();
+            // identifica o id nome no html
+            const nome = document.getElementById('nome').value;
+            // identifica o id mensagem no html
+            const mensagem = document.getElementById('mensagem').value;
+            // numero do celular que vai receber contato
+            const telefone = '5521986028335';
+            // criando a mensagem que será enviada
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+            // formatando o texto para ser enviado
+            const msgFormatada = encodeURIComponent(texto);
+            // depois de escolher o formato da string em algum site de envio crie a sua.
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+            // abrindo a url em outra aba para enviar
+            window.open(url, '_blank');
+        }
+    </script>
+
+
+
 
 </body>
 
