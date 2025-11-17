@@ -168,6 +168,8 @@ body {
     font-size: 1.2rem;
 }
 
+
+
 .projetos {
     padding: 6rem 2rem;
 }
@@ -320,6 +322,19 @@ body {
 footer{
     text-align: center;
     color: var(--claro);
+}
+
+.footer-arruma-redesocial{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 15px auto;
+}
+
+.footer-rede-social-ico img{
+    width: 40px;
+    height: auto;
+    border-radius: 5px;
 }
 
 /* Criando uma animação, devemos dizer como se comportar */
