@@ -296,11 +296,11 @@ body {
 
 .topoMenu{
     text-align: center;
-    padding: 5px;
+    padding: 3px;
     color: var(--escuro);
     font-weight: 600;
     background-color: chartreuse;
-    width: 80px;
+    width: 60px;
     height: auto;
     margin: 15px auto;
     border-radius: 5px;
