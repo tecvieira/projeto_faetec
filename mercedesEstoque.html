@@ -7,8 +7,8 @@
     <title>Mercedes Benz Estoque</title>
 </head>
 <body>
+    <!-- sombra canto superior esquerdo -->
     <div class="particulas"></div>
-    
     
     <nav class="navegacao">
         <ul class="menu">
@@ -16,24 +16,26 @@
             <li><a href="#contatos" class="menu-link">Contatos</a></li>
         </ul>
     </nav>
+    <!-- imagem de apresentação desta página -->
     <main id="inicio" class="cabecalho">
-    
         <img src="image/mercedez/roda-perfil-lateral.jpg" alt="foto roda mercedes benz" class="foto-perfil-estoque">
         <h1>Motor Digital.</h1>
         <p class="cabecalho-sub-titulo-estoque">Mercedes Benz </p>
-    
     </main>
+
+    <!-- título e apresntação da página -->
     <section id="sobre" class="sobre">
         <h2 class="sobre-titulo">Nossos Modelos</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">Veículos novos, semi novos e parcerias.<br> Revisados e com garantia.</p>
         </div>
     </section>
+
     <section id="projetos" class="projetos">
         <h2 class="projetos-titulos">Selecione o Modelo</h2>
         <div class="projetos-caixa">
-    
             <div class="projetos-card">
+                <!-- primeiro veículo -->
                 <a href="glb200Dentro.html"><img src="image/mercedez/glb_200/WhatsApp Image 2025-07-08 at 11.14.35.jpeg" alt="Mercedes Bens carro" class="projetos-imagem"></a>
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">
@@ -50,7 +52,7 @@
                     </p>
                 </div>
             </div>
-    
+            <!-- segundo veículo -->
             <div class="projetos-card">
                 <a href="gle450dDentro.html"><img src="image/mercedez/gle 450d/gle450d-diag-direita.jpeg" alt="mercedes benz carro" class="projetos-imagem"></a>
                 <div class="caixa-textos-projetos">
@@ -67,7 +69,7 @@
                     </p>
                 </div>
             </div>
-    
+            <!-- terceiro veículo -->
             <div class="projetos-card">
                 <a href="gleAmgDentro.html"><img src="image/mercedez/gle_amg/gle_frente_diag-direita.jpg" alt="mercedes carro foto" class="projetos-imagem"></a>
                 <div class="caixa-textos-projetos">
@@ -87,6 +89,8 @@
             </div>
         </div>
     </section>
+
+    <!-- seção de contatos / formulário -->
     <section id="contatos" class="contatos">
         <h2 class="contatos-titulo">Vendedores de Plantão.</h2>
         <p>Deixe seu contato, tire suas dúvidas via WhatsApp.</p>
@@ -101,8 +105,9 @@
         </form>
         <!--<p class="topoMenu"><a href="#inicio">TOPO</a></p>-->
         <button class="topoMenu"><a href="#inicio">TOPO</a></button>
-    
     </section>
+
+    <!-- rodapé -->
     <footer>
         <div class="footer-arruma-redesocial">
             <div class="footer-rede-social-ico">
@@ -114,6 +119,7 @@
         </div>
         <p>Curso Prog. WEB - FAETEC Prof. André Coutinho - Aluno: Robson Vieira</p>
     </footer>
+    <!-- javascrip dando funcionalidade ao formulário -->
     <script>
         function enviarWhats(event) {
             // evita que a tela recarregue por padrão
@@ -130,12 +136,9 @@
             const msgFormatada = encodeURIComponent(texto);
             // depois de escolher o formato da string em algum site de envio crie a sua.
             const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-
             // abrindo a url em outra aba para enviar
             window.open(url, '_blank');
         }
     </script>
-
-    
 </body>
 </html>

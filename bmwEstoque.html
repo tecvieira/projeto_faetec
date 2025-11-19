@@ -9,30 +9,29 @@
 <body>
     <div class="particulas"></div>
     
-    
     <nav class="navegacao">
         <ul class="menu">
             <li><a href="index.html" class="menu-link">Voltar</a></li>
             <li><a href="#contatos" class="menu-link">Contatos</a></li>
         </ul>
     </nav>
+
     <main id="inicio" class="cabecalho">
-    
         <img src="image/bmw/roda-close.jpg" alt="foto roda bmw" class="foto-perfil-estoque">
         <h1>Motor Digital.</h1>
         <p class="cabecalho-sub-titulo-estoque">BMW </p>
-    
     </main>
+
     <section id="sobre" class="sobre">
         <h2 class="sobre-titulo">Nossos Modelos</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">Veículos novos, semi novos e parcerias.<br> Revisados e com garantia.</p>
         </div>
     </section>
+
     <section id="projetos" class="projetos">
         <h2 class="projetos-titulos">Selecione o Modelo</h2>
         <div class="projetos-caixa">
-    
             <div class="projetos-card">
                 <a href="bmw-x2Dentro.html"><img src="image/bmw/bmw-x2/bmw-x2-frente-diag-dir.webp" alt="bmw x2 foto" class="projetos-imagem"></a>
                 <div class="caixa-textos-projetos">
@@ -89,6 +88,7 @@
             </div>
         </div>
     </section>
+
     <section id="contatos" class="contatos">
         <h2 class="contatos-titulo">Vendedores de Plantão.</h2>
         <p>Deixe seu contato, tire suas dúvidas via WhatsApp.</p>
@@ -101,10 +101,9 @@
             </div>
             <button type="submit" class="botao-form">Enviar WhatsApp</button>
         </form>
-        <!--<p class="topoMenu"><a href="#inicio">TOPO</a></p>-->
         <button class="topoMenu"><a href="#inicio">TOPO</a></button>
-    
     </section>
+
     <footer>
         <div class="footer-arruma-redesocial">
             <div class="footer-rede-social-ico">
@@ -115,9 +114,10 @@
             </div>
         </div>
         <p>
-            Curso Prog. WEB - FAETEC Prof. André Coutinho - Aluno: Robson Vieira</p>
+            Curso Prog. WEB - FAETEC Prof. André Coutinho - Aluno: Robson Vieira
         </p>
     </footer>
+
     <script>
         function enviarWhats(event) {
             // evita que a tela recarregue por padrão
@@ -134,11 +134,9 @@
             const msgFormatada = encodeURIComponent(texto);
             // depois de escolher o formato da string em algum site de envio crie a sua.
             const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-
             // abrindo a url em outra aba para enviar
             window.open(url, '_blank');
         }
     </script>
-    
 </body>
 </html>

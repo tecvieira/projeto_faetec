@@ -9,8 +9,9 @@
 </head>
 
 <body>
+    <!-- sombra canto superior esquerdo -->
     <div class="particulas"></div>
-
+    <!-- atalhos de navegação dentro da página principal -->
     <nav class="navegacao">
         <ul class="menu">
             <li><a href="#inicio" class="menu-link">Início</a></li>
@@ -19,28 +20,33 @@
             <li><a href="#contatos" class="menu-link">Contatos</a></li>
         </ul>
     </nav>
-    <main id="inicio" class="cabecalho">
 
+    <main id="inicio" class="cabecalho">
+        <!-- imagem de cabeçalho do site -->
         <img src="image/bmw/bmw-capa.jpg" alt="foto menina" class="foto-perfil">
         <h1>Motor Digital.</h1>
         <p class="cabecalho-sub-titulo">Veículos Premium a venda.</p>
-
     </main>
+
     <section id="sobre" class="sobre">
+        <!-- parágrafo com localização e apresentação da agencia -->
         <h2 class="sobre-titulo">Quem somos</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">Uma empresa especializada em venda de veículos de luxo para clientes de bom
                 gosto.<br> Estabelecidos no ramo desde 2024, na Avenida das Americas, 4700 Barra da Tijuca no Rio de
-                Janeiro.<br> Venha nos conhecer e apaixone-se...</p>
-                
+                Janeiro.<br> Venha nos conhecer e apaixone-se...
+            </p>
         </div>
     </section>
+
     <section id="projetos" class="projetos">
+        <!-- apresentação das marcas sugeridas -->
         <h2 class="projetos-titulos">Selecione a Marca</h2>
         <div class="projetos-caixa">
 
             <div class="projetos-card">
-                <a href="carrosEstoque.html"><img src="image/masserati/masserati-logo.webp" alt="Masserati logo"
+                <!-- primeira marca -->
+                <a href="carrosEstoque.html"><img src="image/masserati/masserati-logo.webp" alt="grade masserati imagem"
                         class="projetos-imagem"></a>
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">
@@ -57,6 +63,7 @@
             </div>
 
             <div class="projetos-card">
+                <!-- segunda marca -->
                 <a href="bmwEstoque.html"><img src="image/bmw/BMW-Logo-3-1536x864.jpg" alt="grade bmw imagem" class="projetos-imagem"></a>
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">
@@ -70,8 +77,9 @@
             </div>
 
             <div class="projetos-card">
+                <!-- terceira marca -->
                 <a href="mercedesEstoque.html"><img src="image/mercedez/mercedes-logo.avif"
-                        alt="mercedes" class="projetos-imagem"></a>
+                        alt=" grade mercedes imagem" class="projetos-imagem"></a>
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">
                         Mercedes Benz
@@ -86,7 +94,10 @@
         </div>
     </section>
     <section id="contatos" class="contatos">
+        
         <h2 class="contatos-titulo">Agende sua visita.</h2>
+
+        <!-- inicio da seção de contatos com formulário -->
         <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
             <div class="grupo-form">
                 <input type="text" placeholder="Nome" class="campo-form" id="nome">
@@ -96,10 +107,10 @@
             </div>
             <button type="submit" class="botao-form">Enviar WhatsApp</button>
         </form>
-        <!--<p class="topoMenu"><a href="#inicio">TOPO</a></p>-->
+       <!-- botão de volta ao topo da página -->
         <button class="topoMenu"><a href="#inicio">TOPO</a></button>
-
     </section>
+    <!-- início do rodapé da página -->
     <footer>
         <div class="footer-arruma-redesocial">
             <div class="footer-rede-social-ico">
@@ -111,6 +122,7 @@
         </div>
         <p>Curso Prog. WEB - FAETEC Prof. André Coutinho - Aluno: Robson Vieira</p>
     </footer>
+    <!-- java script dando funcionalidade ao envio de whatsZpp -->
     <script>
         function enviarWhats(event) {
             // evita que a tela recarregue por padrão
@@ -127,7 +139,6 @@
             const msgFormatada = encodeURIComponent(texto);
             // depois de escolher o formato da string em algum site de envio crie a sua.
             const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-
             // abrindo a url em outra aba para enviar
             window.open(url, '_blank');
         }
