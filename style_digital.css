@@ -1,349 +1,536 @@
 @charset "UTF-8";
-/* Estilização das páginas usando css */
+/* Define o conjunto de caracteres do arquivo como UTF-8, garantindo a correta exibição de caracteres especiais. */
+
+/* Seletor universal (*) para aplicar estilos a todos os elementos HTML. */
 * {
     padding: 0;
+    /* Remove o preenchimento interno de todos os elementos. */
     margin: 0;
+    /* Remove a margem externa de todos os elementos. */
     box-sizing: border-box;
+    /* Faz com que o padding e a borda sejam incluídos na largura e altura totais do elemento. */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Define a família de fontes padrão para todo o documento. */
 }
 
+/* Estiliza o elemento raiz do documento (a tag <html>). */
 html {
-    /* Rolagem suave da página */
     scroll-behavior: smooth;
+    /* Habilita a rolagem suave ao navegar para âncoras na mesma página. */
 }
 
+/* Define variáveis CSS (custom properties) no escopo raiz (:root) para serem reutilizadas em todo o documento. */
 :root {
     --prmaria: #4f46e5;
+    /* Cor primária. */
     --secundaria: #7c3aed;
+    /* Cor secundária. */
     --escuro: #0f172a;
+    /* Tom de cor escura. */
     --maisEscuro: #0a0f1c;
+    /* Tom de cor mais escura. */
     --claro: #e2e8fe;
+    /* Tom de cor clara. */
     --vidro: rgba(255, 255, 255, 0.1);
+    /* Cor com transparência para efeito de vidro. */
 }
 
+/* Estiliza o corpo (body) do documento. */
 body {
     background-color: var(--escuro);
+    /* Define a cor de fundo do corpo usando a variável --escuro. */
     color: var(--claro);
-}
-/*Configurando posição e das manchas na tela*/
-.particulas{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* não fica na frente de outras ítens */
-    z-index: -1;
-    opacity: 0.5;
-    /* define forma e cores do efeito de mancha na tela */
-    background: 
-    radial-gradient(circle at 10% 20%, var(--prmaria) 0%, transparent 20%),
-    radial-gradient(circle at 10% 20%, var(--secundaria) 0%, transparent 20%), var(--maisEscuro);
+    /* Define a cor do texto padrão usando a variável --claro. */
 }
 
-/* configurando o menu de navegação */
+/* Estiliza o elemento com a classe .particulas, criando um efeito de fundo. */
+.particulas {
+    position: fixed;
+    /* Posição fixa em relação à janela de visualização. */
+    top: 0;
+    /* Alinha no topo. */
+    left: 0;
+    /* Alinha à esquerda. */
+    width: 100%;
+    /* Largura total da tela. */
+    height: 100%;
+    /* Altura total da tela. */
+    z-index: -1;
+    /* Coloca o elemento atrás de outros conteúdos. */
+    opacity: 0.5;
+    /* Define a opacidade do elemento. */
+    /* Cria um fundo com gradientes radiais para um efeito de "manchas". */
+    background:
+        radial-gradient(circle at 10% 20%, var(--prmaria) 0%, transparent 20%),
+        /* Gradiente radial com a cor primária. */
+        radial-gradient(circle at 10% 20%, var(--secundaria) 0%, transparent 20%), var(--maisEscuro);
+    /* Gradiente radial com a cor secundária sobre um fundo mais escuro. */
+}
+
+/* Estiliza a barra de navegação. */
 .navegacao {
     position: fixed;
-    /* define que vai ficar sempre no topo */
+    /* Posição fixa para que fique sempre visível no topo. */
     top: 0;
+    /* Alinha no topo da página. */
     background: rgba(15, 23, 42, 0.8);
-    /* faz com que a largura ocupe toda extensaõ */
+    /* Fundo semi-transparente. */
     width: 100%;
-    /* define que vai ficar sempre na frente de todos */
+    /* Ocupa toda a largura da tela. */
     z-index: 100;
-    /* define um espaçamento entre os ítens */
+    /* Garante que a navegação fique na frente de outros elementos. */
     padding: 1.5rem;
+    /* Adiciona preenchimento interno. */
 }
 
+/* Estiliza a lista do menu. */
 .menu {
-    /* coloca um ao lado do outro */
     display: flex;
-    /* centraliza o conteúdo */
+    /* Torna os itens da lista flexíveis, alinhando-os em linha. */
     justify-content: center;
-    /* elimina os marcadores da lista */
+    /* Centraliza os itens do menu horizontalmente. */
     list-style: none;
-    /* cria espaçamento horizontal entre os elementos */
+    /* Remove os marcadores de lista (bolinhas). */
     gap: 3rem;
+    /* Cria um espaçamento de 3rem entre os itens do menu. */
 }
-/* paleta de cores baseada no adobe color */
+
+/* Estiliza os links dentro do menu. */
 .menu-link {
     text-decoration: none;
+    /* Remove o sublinhado padrão dos links. */
     color: var(--claro);
+    /* Define a cor do texto do link. */
     font-weight: 500;
+    /* Define a espessura da fonte. */
     position: relative;
+    /* Define a posição como relativa para o pseudo-elemento ::after. */
     padding: 0.5rem 0;
+    /* Adiciona preenchimento acima e abaixo do link. */
 }
 
-/* posso colocar coisas:  (after => depois) ou (before => antes) dos meus ítens */
-
-/* inserindo ítens/ efeitos ao menu após menu */
+/* Adiciona um pseudo-elemento ::after para criar um efeito de sublinhado animado. */
 .menu-link::after {
-    /* é obrigatório colocar o content vazio */
     content: '';
+    /* Conteúdo vazio, obrigatório para pseudo-elementos. */
     height: 2px;
+    /* Altura do sublinhado. */
     width: 0;
+    /* Largura inicial do sublinhado (invisível). */
     position: absolute;
+    /* Posição absoluta em relação ao .menu-link. */
     bottom: 0;
+    /* Posiciona na parte inferior do link. */
     left: 0;
-    /* vai dar cor com degrade ao efeito */
+    /* Posiciona no início do link. */
     background: linear-gradient(90deg, #e2e8fe, #7c3aed);
-    /* cria efeito lento na aparição */
+    /* Cor do sublinhado com um gradiente. */
     transition: width 0.5s ease;
+    /* Anima a mudança da largura em 0.5 segundos. */
 }
-/* efeito no menu ao passar o mouse */
+
+/* Efeito hover para o link do menu. */
 .menu-link:hover::after {
     width: 100%;
+    /* Aumenta a largura do sublinhado para 100% ao passar o mouse. */
 }
 
+/* Estiliza a seção do cabeçalho. */
 .cabecalho {
     display: flex;
+    /* Usa o modelo de layout flexbox. */
     min-height: 100vh;
+    /* Altura mínima igual à altura da janela de visualização. */
     justify-content: center;
+    /* Centraliza o conteúdo horizontalmente. */
     align-items: center;
+    /* Centraliza o conteúdo verticalmente. */
     flex-direction: column;
+    /* Empilha os itens flexíveis verticalmente. */
 }
 
+/* Estiliza a foto de perfil. */
 .foto-perfil {
     width: 350px;
+    /* Largura da imagem. */
     height: 100%;
+    /* Altura se ajusta para manter a proporção. */
     box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    /* Adiciona uma sombra sutil. */
     border-radius: 50px;
+    /* Arredonda os cantos da imagem. */
     border: 4px solid var(--vidro);
+    /* Adiciona uma borda com efeito de vidro. */
     animation: flutuar 5s ease-in-out infinite;
+    /* Aplica a animação 'flutuar' de forma infinita. */
 }
 
-.foto-perfil-estoque{
+/* Estilização específica para uma foto de perfil na seção de estoque. */
+.foto-perfil-estoque {
     width: 300px;
+    /* Largura da imagem. */
     height: 100%;
+    /* Altura se ajusta. */
     box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    /* Sombra. */
     border-radius: 50px;
+    /* Cantos arredondados. */
     border: 4px solid var(--vidro);
-    /* infinite da movimento sem parar */
-    /* parâmetros do efeito definidos no keyframes abaixo nofim */
+    /* Borda com efeito de vidro. */
     animation: flutuar 5s ease-in-out infinite;
+    /* Aplica a animação 'flutuar'. */
 }
 
+/* Estiliza o título principal no cabeçalho. */
 .cabecalho h1 {
     font-size: 3.5rem;
+    /* Tamanho da fonte. */
     color: var(--prmaria);
+    /* Cor do texto. */
     font-weight: bold;
+    /* Espessura da fonte. */
     margin: 20px;
+    /* Margem externa. */
 }
 
+/* Estiliza o subtítulo no cabeçalho. */
 .cabecalho-sub-titulo {
     font-size: 1.5rem;
+    /* Tamanho da fonte. */
     color: var(--claro);
+    /* Cor do texto. */
 }
 
+/* Estiliza o subtítulo na seção de estoque. */
 .cabecalho-sub-titulo-estoque {
     font-size: 2.2rem;
+    /* Tamanho da fonte. */
     color: var(--claro);
+    /* Cor do texto. */
 }
 
+/* Estiliza a seção "Sobre". */
 .sobre {
     padding: 6rem 2rem;
+    /* Preenchimento interno (vertical e horizontal). */
 }
 
+/* Estiliza o título da seção "Sobre". */
 .sobre-titulo {
     font-size: 3rem;
+    /* Tamanho da fonte. */
     color: var(--claro);
+    /* Cor do texto. */
     text-align: center;
+    /* Alinha o texto ao centro. */
     margin-bottom: 20px;
+    /* Margem inferior. */
 }
 
+/* Estiliza a caixa de conteúdo da seção "Sobre". */
 .sobre-caixa {
     padding: 2rem;
+    /* Preenchimento interno. */
     max-width: 800px;
+    /* Largura máxima. */
     margin: 0 auto;
+    /* Centraliza a caixa horizontalmente. */
     border-radius: 16px;
+    /* Cantos arredondados. */
     border: 1px solid var(--vidro);
-    /* cria um efeito de vidro embaçado de banheiro */
+    /* Borda com efeito de vidro. */
     backdrop-filter: blur(10px);
-    /* precisa escolher uma cor para o backdrop-filter */
+    /* Aplica um efeito de desfoque no fundo atrás do elemento. */
     background: rgba(255, 255, 255, 0.05);
+    /* Fundo semi-transparente. */
 }
 
+/* Estiliza o parágrafo na seção "Sobre". */
 .sobre-paragrafo {
     text-align: center;
+    /* Alinha o texto ao centro. */
     font-size: 1.2rem;
+    /* Tamanho da fonte. */
 }
 
+/* Estiliza a seção "Projetos". */
 .projetos {
     padding: 6rem 2rem;
+    /* Preenchimento interno. */
 }
 
+/* Estiliza o contêiner dos cards de projeto. */
 .projetos-caixa {
-    /* posiciona os elemntos como um grid */
     display: grid;
-    /* cria colunas no mesmo tamanho para todos os ítens com tamanho mínimo de 300px e o máximo 1fr( 1 fração do espaço) */
+    /* Usa o layout de grade (grid). */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* espaçamento entre as imagens */
+    /* Cria colunas responsivas que se ajustam ao tamanho da tela. */
     gap: 2rem;
-    /* tamanho máximo para telas muito grandes */
+    /* Espaçamento entre os cards. */
     max-width: 1200px;
+    /* Largura máxima do contêiner. */
     margin: 0 auto;
+    /* Centraliza o contêiner. */
 }
 
+/* Estiliza cada card de projeto. */
 .projetos-card {
     background: rgba(255, 255, 255, 0.05);
+    /* Fundo semi-transparente. */
     border-radius: 16px;
+    /* Cantos arredondados. */
     backdrop-filter: blur(5px);
+    /* Efeito de desfoque no fundo. */
     border: 1px solid var(--vidro);
-    /* Caso a imagem fique grande este atributo esconde a sobra */
+    /* Borda com efeito de vidro. */
     overflow: hidden;
+    /* Esconde qualquer conteúdo que transborde do card. */
     transition: all 0.5s ease;
+    /* Anima todas as propriedades que mudam em 0.5 segundos. */
 }
 
-/* Criando efeitos sobre a imagem dos cards */
+/* Efeito hover para o card de projeto. */
 .projetos-card:hover {
     box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-    /* este efeito move 10px no eixo y e muda sua escala aumentando 1.03px */
+    /* Adiciona uma sombra ao passar o mouse. */
     transform: translateY(-10px) scale(1.03);
+    /* Move o card para cima e o aumenta ligeiramente. */
     cursor: pointer;
+    /* Muda o cursor para uma mão para indicar que é clicável. */
 }
 
+/* Estiliza o título da seção "Projetos". */
 .projetos-titulos {
     text-align: center;
+    /* Alinha o texto ao centro. */
     font-size: 2.5rem;
+    /* Tamanho da fonte. */
     margin-bottom: 50px;
+    /* Margem inferior. */
 }
 
+/* Estiliza a imagem dentro do card de projeto. */
 .projetos-imagem {
     height: 200px;
+    /* Altura fixa da imagem. */
     width: 100%;
-    /* determina como a imagem vai cobrir a área */
+    /* Largura total do card. */
     object-fit: cover;
+    /* Faz a imagem cobrir toda a área designada, cortando se necessário. */
 }
 
+/* Estiliza a caixa de texto dentro do card de projeto. */
 .caixa-textos-projetos {
     padding: 1.5rem;
+    /* Preenchimento interno. */
 }
 
+/* Estiliza o parágrafo dentro do card de projeto. */
 .paragrafo-projetos {
     color: rgba(226, 232, 240, 0.8);
+    /* Cor do texto com opacidade. */
     line-height: 1.25rem;
+    /* Altura da linha para melhor legibilidade. */
 }
 
+/* Estiliza as informações do projeto. */
 .info-projetos {
     margin-bottom: 5px;
+    /* Margem inferior. */
 }
 
+/* Estiliza a seção "Contatos". */
 .contatos {
     padding: 6rem 2rem;
+    /* Preenchimento interno. */
 }
 
+/* Estiliza o título da seção "Contatos". */
 .contatos-titulo {
     text-align: center;
+    /* Alinha o texto ao centro. */
     font-size: 2.5rem;
+    /* Tamanho da fonte. */
     margin-bottom: 50px;
+    /* Margem inferior. */
 }
 
-.contatos p{
+/* Estiliza os parágrafos na seção "Contatos". */
+.contatos p {
     text-align: center;
+    /* Alinha o texto ao centro. */
     margin-bottom: 10px;
+    /* Margem inferior. */
     font-size: 1.1rem;
+    /* Tamanho da fonte. */
 }
 
+/* Estiliza o formulário de contato. */
 .formulario-contato {
     max-width: 600px;
+    /* Largura máxima. */
     margin: 0 auto;
+    /* Centraliza o formulário. */
     background: rgba(255, 255, 255, 0.05);
+    /* Fundo semi-transparente. */
     backdrop-filter: blur(5px);
+    /* Efeito de desfoque no fundo. */
     padding: 2rem;
+    /* Preenchimento interno. */
     border: 1px solid var(--vidro);
+    /* Borda com efeito de vidro. */
     border-radius: 16px;
+    /* Cantos arredondados. */
 }
 
+/* Estiliza os campos de entrada do formulário. */
 .campo-form {
     width: 100%;
+    /* Largura total do contêiner. */
     padding: 1rem;
+    /* Preenchimento interno. */
     background: rgba(255, 255, 255, 0.05);
+    /* Fundo semi-transparente. */
     border-radius: 8px;
+    /* Cantos arredondados. */
     color: var(--claro);
-    border: 1px solid var(--vidro) ;
-    /* retira o efeito marcado ao clicar no campo */
+    /* Cor do texto. */
+    border: 1px solid var(--vidro);
+    /* Borda com efeito de vidro. */
     outline: none;
+    /* Remove a borda de foco padrão. */
 }
 
-/* criando efeito sobre capo do formulário ao clicar cria borda de outra cor */
-.campo-form:focus{
+/* Efeito de foco para os campos do formulário. */
+.campo-form:focus {
     border-color: var(--secundaria);
+    /* Muda a cor da borda ao focar. */
     box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+    /* Adiciona uma sombra ao focar. */
 }
 
+/* Estiliza o grupo de campos do formulário (label + input). */
 .grupo-form {
     margin-bottom: 1.5rem;
+    /* Margem inferior para espaçamento. */
 }
 
-.botao-form{
+/* Estiliza o botão de envio do formulário. */
+.botao-form {
     color: var(--claro);
-    background: linear-gradient(45deg, var(--prmaria), var(--secundaria) );
+    /* Cor do texto. */
+    background: linear-gradient(45deg, var(--prmaria), var(--secundaria));
+    /* Fundo com gradiente. */
     padding: 1rem 2rem;
+    /* Preenchimento interno. */
     border: none;
-    border-radius:8px;
+    /* Remove a borda. */
+    border-radius: 8px;
+    /* Cantos arredondados. */
     cursor: pointer;
+    /* Cursor de mão. */
     font-weight: bold;
+    /* Texto em negrito. */
     width: 100%;
-    transition: all 0.5 ease;
+    /* Largura total. */
+    transition: all 0.5s ease;
+    /* Anima todas as propriedades. */
 }
 
-.botao-form:hover{
+/* Efeito hover para o botão do formulário. */
+.botao-form:hover {
     transform: translateY(-4px);
+    /* Move o botão para cima. */
     box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+    /* Adiciona uma sombra mais pronunciada. */
 }
 
-.topoMenu{
+/* Estiliza o link "Topo" para voltar ao menu. */
+.topoMenu {
     text-align: center;
+    /* Alinha o texto ao centro. */
     padding: 3px;
+    /* Preenchimento interno. */
     color: var(--escuro);
+    /* Cor do texto. */
     font-weight: 600;
+    /* Espessura da fonte. */
     background-color: chartreuse;
+    /* Cor de fundo verde-limão. */
     width: 60px;
+    /* Largura fixa. */
     height: auto;
+    /* Altura automática. */
     margin: 15px auto;
+    /* Centraliza horizontalmente com margens. */
     border-radius: 5px;
+    /* Cantos arredondados. */
 }
 
-.contatos .topoMenu{
+/* Estilização específica para o link "Topo" dentro da seção de contatos. */
+.contatos .topoMenu {
     display: block;
-    align-items: center; 
+    /* Faz o elemento se comportar como um bloco. */
+    align-items: center;
+    /* Centraliza o conteúdo (útil se fosse flex). */
 }
 
-.contatos .topoMenu a{
+/* Estiliza o link dentro do .topoMenu na seção de contatos. */
+.contatos .topoMenu a {
     text-decoration: none;
+    /* Remove o sublinhado do link. */
 }
 
-.contatos .topoMenu:hover{
+/* Efeito hover para o link "Topo". */
+.contatos .topoMenu:hover {
     background-color: rgb(54, 94, 14);
+    /* Muda a cor de fundo ao passar o mouse. */
     color: var(--claro);
+    /* Muda a cor do texto ao passar o mouse. */
 }
 
-footer{
+/* Estiliza o rodapé da página. */
+footer {
     text-align: center;
+    /* Alinha o texto ao centro. */
     color: var(--claro);
+    /* Cor do texto. */
 }
 
-.footer-arruma-redesocial{
+/* Contêiner para os ícones de redes sociais no rodapé. */
+.footer-arruma-redesocial {
     display: flex;
+    /* Usa flexbox para alinhar os ícones. */
     justify-content: center;
+    /* Centraliza os ícones horizontalmente. */
     gap: 40px;
+    /* Espaçamento entre os ícones. */
     margin: 15px auto;
+    /* Margem para espaçamento e centralização. */
 }
 
-.footer-rede-social-ico img{
+/* Estiliza as imagens dos ícones de redes sociais. */
+.footer-rede-social-ico img {
     width: 40px;
+    /* Largura do ícone. */
     height: auto;
+    /* Altura se ajusta proporcionalmente. */
     border-radius: 5px;
+    /* Cantos arredondados. */
 }
-/* efeito de animação na foto principal */
-/* Criando uma animação, devemos dizer como se comportar */
-@keyframes flutuar{
-    0%, 100%{
-        /* no momento 0 e 100% fique parado */
-        transform:translateY(0)
+
+/* Define a animação chamada 'flutuar'. */
+@keyframes flutuar {
+
+    /* Define os estados da animação em diferentes pontos percentuais. */
+    0%,
+    100% {
+        transform: translateY(0);
+        /* No início (0%) и no fim (100%), a imagem está na sua posição original. */
     }
-    50%{
-        /* no momento 50% diminua 20px */
+
+    50% {
         transform: translateY(-20px);
+        /* Na metade da animação (50%), a imagem é movida 20px para cima. */
     }
 }
