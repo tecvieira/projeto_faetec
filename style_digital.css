@@ -449,7 +449,7 @@ body {
 .topoMenu {
     text-align: center;
     /* Alinha o texto ao centro. */
-    padding: 3px;
+    padding: 1px;
     /* Preenchimento interno. */
     color: var(--escuro);
     /* Cor do texto. */
